@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CompoundInterestApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CompoundInterestApp.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+    
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial
+                        BackgroundSource="Digger"
+                        TintColor="Black"
+                        TintOpacity="1"
+                        MaterialOpacity="0.65" />
+                </ExperimentalAcrylicBorder.Material>
+            </ExperimentalAcrylicBorder>
+            
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30">
+                <TextBlock HorizontalAlignment="Left" Margin="20 5" FontSize="16" FontWeight="Bold">Check Compound Interest</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Enter Principal Amount</TextBlock>
+                <TextBox Name="PrincipalAmt">
+                    </TextBox>
+            <TextBlock HorizontalAlignment="Center">Enter Rate</TextBlock>
+            <TextBox Name="Rate"></TextBox>
+
+            <TextBlock HorizontalAlignment="Center">Enter Duration/Time</TextBlock>
+            <TextBox Name="Duration"></TextBox>
+
+            <StackPanel Margin="5">
+            <Button Content="Count" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90 5" Click="Button_OnClick" />
+            </StackPanel>
+
+                <TextBlock Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">Simple Interest:</TextBlock>
+                <TextBox Name="SimpleRes" Margin="0 5"></TextBox>
+
+                
+            <TextBlock Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">Compound Interest:</TextBlock>
+            <TextBox Name="Res" Margin="0 5"></TextBox>
+            
+            <!--<Separator IsVisible="True" Margin="10 10"></Separator>-->
+
+            <Panel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Button Content="Clear" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="50 5" Click="Button_OnClick_Clear"></Button>
+                </StackPanel>
+            
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Content="Exit" 
+                            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 5" Click="Button_OnClick_Exit" />
+                </StackPanel>
+            </Panel>
+        </StackPanel>
+    </Panel>
+</UserControl>

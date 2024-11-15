@@ -50,7 +50,7 @@ jobs:
     - name: Publish
       if: matrix.os != 'ubuntu-24.04' 
       # 24.04 is android 
-      run: dotnet publish CompoundInterestApp/CompoundInterestApp.Desktop --configuration Release --output ./output
+      run: dotnet publish CompoundInterestApp/CompoundInterestApp.Desktop  -p:PublishSingleFile=true --self-contained true --configuration Release --output ./output
 
     - name: Build and Publish For android
       if: matrix.os == 'ubuntu-24.04' 
